@@ -5,18 +5,58 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:mainInterface"
         mc:Ignorable="d"
-        Title="MainWindow" Height="450" Width="800">
+        Title="MovieTips" Height="450" Width="800">
     <Grid>
         <Grid.RowDefinitions>
-            <RowDefinition Height="29*"/>
-            <RowDefinition Height="364*"/>
-            <RowDefinition Height="29*"/>
+            <RowDefinition Height="51*"/>
+            <RowDefinition Height="368*"/>
         </Grid.RowDefinitions>
-        <Grid.ColumnDefinitions>
-            <ColumnDefinition Width="55*"/>
-            <ColumnDefinition Width="681*"/>
-            <ColumnDefinition Width="55*"/>
-        </Grid.ColumnDefinitions>
+        
+        <TextBox Name="txtEditor" />
+        
+        <Menu HorizontalAlignment="Left" Height="51" VerticalAlignment="Top" Width="790" Background="#bf969a" DockPanel.Dock="Top">
+            <MenuItem Name="btnOpenFile" Click="btnOpenFile_Click" Header="Open" Height="51" Width="55"/>
+            <MenuItem Header="View" Height="51" Width="55"/>
+            <MenuItem Header="Edit" Height="51" Width="55"/>
+            <MenuItem Header="Help" Height="51" Width="55"/>
+        </Menu>
+        <Border Height="45" Width="49" BorderThickness="1" BorderBrush="#7c7e8b" Background="Transparent" CornerRadius="10" Margin="0,0,737,0"/>
+        <Border Height="45" Width="49" BorderThickness="1" BorderBrush="#7c7e8b" Background="Transparent" CornerRadius="10" Margin="54,0,683,0"/>
+        <Border Height="45" Width="49" BorderThickness="1" BorderBrush="#7c7e8b" Background="Transparent" CornerRadius="10" Margin="109,0,628,0"/>
+        <Border Height="45" Width="49" BorderThickness="1" BorderBrush="#7c7e8b" Background="Transparent" CornerRadius="10" Margin="164,0,573,0"/>
 
+        <Border Margin="492,10,115,2" Padding="5" BorderThickness="1" BorderBrush="#bf969a" Background="White" CornerRadius="10">
+            <TextBox BorderBrush="White" TextWrapping="Wrap" Text="Enter film..." Background="White" Margin="18,4,19,4"/>
+        </Border>
+
+        <Border BorderThickness="1" BorderBrush="#7c7e8b" Background="#bf969a" CornerRadius="10" Margin="682,10,48,2">
+            <Button Content="Search" Background="#bf969a" BorderBrush="#bf969a" Margin="682,10,55,0"/>
+        </Border>
+        <Label Content="Search" HorizontalAlignment="Center" Margin="690,15,48,0" VerticalAlignment="Top" Width="54"/>
+
+        <Image Width="792">
+            <Image.Source>
+                <BitmapImage DecodePixelWidth="200" UriSource="C:\Users\Admin\Desktop\movietips\Movietips\movietips\Presentation Layer\mainInterface\mainInterface\images\logo.png" />
+            </Image.Source>
+        </Image>
+
+
+        <DataGrid Name="DataGridXAML" BorderBrush="White" Background="White" Height="353" Margin="30,5,30,0" Grid.Row="1" VerticalAlignment="Top">
+            <DataGrid.Resources>
+                <Style TargetType="{x:Type DataGridColumnHeader}">
+                    <Setter Property="Background" Value="#7c7e8b"/>
+                    <Setter Property="FontWeight" Value="SemiBold"/>
+                </Style>
+            </DataGrid.Resources>
+            <DataGrid.Columns>
+                <DataGridTextColumn Header="Movie                         "/>
+                <DataGridTextColumn Header="Description                                                                                                "/>
+                <DataGridTextColumn Header="Rate                      "/>
+                <DataGridTextColumn Header="Comments              "/>
+            </DataGrid.Columns>
+        </DataGrid>
     </Grid>
 </Window>
+
+
+
