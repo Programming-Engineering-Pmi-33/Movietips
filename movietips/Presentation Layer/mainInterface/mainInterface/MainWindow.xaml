@@ -5,6 +5,7 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:mainInterface"
         mc:Ignorable="d"
+        Background="#b0b6bb"
         Title="MovieTips" Height="450" Width="800">
     <Grid>
         <Grid.RowDefinitions>
@@ -41,7 +42,7 @@
         </Image>
 
 
-        <DataGrid Name="DataGridXAML" BorderBrush="White" Background="White" Height="353" Margin="30,5,30,0" Grid.Row="1" VerticalAlignment="Top">
+        <DataGrid Name="DataGridXAML" BorderBrush="#b0b6bb" Background="#b0b6bb" Height="353" Margin="30,5,30,0" Grid.Row="1" VerticalAlignment="Top">
             <DataGrid.Resources>
                 <Style TargetType="{x:Type DataGridColumnHeader}">
                     <Setter Property="Background" Value="#7c7e8b"/>
