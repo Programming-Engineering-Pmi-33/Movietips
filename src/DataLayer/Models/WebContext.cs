@@ -2,7 +2,7 @@
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Metadata;
 
-namespace ADO.NET.Models
+namespace DataLayer.Models
 {
     public partial class WebContext : DbContext
     {

@@ -1,8 +1,8 @@
 using System;
-using ADO.NET.Models;
+using DataLayer.Models;
 using System.Linq;
 
-namespace ADO.NET.GenerateDBData
+namespace DataLayer.GenerateDBData
 {
     static class CommentGenerator
     {

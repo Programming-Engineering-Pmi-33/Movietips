@@ -1,14 +1,14 @@
 using System;
 using System.Linq;
-using ADO.NET.Models;
+using DataLayer.Models;
 
-namespace ADO.NET.GetDataFromDB
+namespace DataLayer.GetDataFromDB
 {
     public static class PrintOutData
     {
         public static void print()
         {
-            var dbContext = new webContext();
+            var dbContext = new WebContext();
 
             var users = dbContext.User.ToList();
             var movies = dbContext.Movie.ToList();
