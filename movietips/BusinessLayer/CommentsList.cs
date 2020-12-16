@@ -29,7 +29,7 @@ namespace BusinessLayer
         public List<Comment> comments;
         public CommentsList(int movieId)
         {
-            List<Comment> cms = dbContext.Comment.Where(c => c.MovieId == movieId).Select(c => new Comment(c.Id, new TimeSpan(c.Timestamp.Ticks))).ToList();
+            comments = dbContext.Comment.Where(c => c.MovieId == movieId).Select(c => new Comment(c.Id, new TimeSpan(c.Timestamp.Ticks))).ToList();
         }
     }
 }
