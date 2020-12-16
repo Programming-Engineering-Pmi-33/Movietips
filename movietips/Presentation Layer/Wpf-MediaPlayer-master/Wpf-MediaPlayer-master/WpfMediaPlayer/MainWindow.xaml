@@ -14,20 +14,37 @@
             <RowDefinition/>
             <RowDefinition Height="50"/>
         </Grid.RowDefinitions>
-        
-        <Menu>
-            <MenuItem Header="File">
-                <MenuItem Header="Open" Click="MenuItem_OnClick"/>
+
+        <Menu Background="#7c7e8b">
+            <MenuItem Header="File" Height="25">
+                <MenuItem BorderBrush="#7c7e8b" Background="#7c7e8b" Header="Open" Click="MenuItem_OnClick"/>
             </MenuItem>
             <MenuItem Header="About" Click="About_OnClick" />
+            <MenuItem Header="Add comment" Click="addComment_OnClick"/>
         </Menu>
-        
+
         <MediaElement x:Name="mediaElement" Grid.Row="1" DockPanel.Dock="Top" LoadedBehavior="Manual" UnloadedBehavior="Manual"
                       MediaEnded="MediaElement_OnMediaEnded" MediaFailed="MediaElement_OnMediaFailed"/>
-        
+
         <WrapPanel Grid.Row="1" HorizontalAlignment="Right" VerticalAlignment="Center">
-            <Button Name="btnTip" Margin="5,0" Click="btnTip_Click" Visibility="Hidden">Movietip</Button>
+            <Button Name="btnTip" Margin="5,0" Click="btnTip_Click" Visibility="Hidden" BorderBrush="#a7a9af" Background="#7c7e8b" Height="30" Width="55">Movietip</Button>
         </WrapPanel>
+
+        <Popup Name="moviePopUp" Placement="Mouse" HorizontalOffset="-100" VerticalOffset="-100" AllowsTransparency="True">
+            <Grid>
+                <Rectangle Width="200" Height="200" Fill="#7c7e8b"/>
+                <Button Click="Hide_Click" Margin="150,164,10,10" BorderBrush="#a7a9af" Background="#7c7e8b">Hide</Button>
+                <Label Name="lblTip" Content="Movie tip..." HorizontalAlignment="Left" Margin="10,10,0,0" VerticalAlignment="Top" Height="149" Width="180"/>
+            </Grid>
+        </Popup>
+
+        <Popup Name="addPopUp" Placement="Relative" VerticalOffset="800" HorizontalOffset="-370" AllowsTransparency="True">
+            <Grid Width="740" Height="144" Background="#7c7e8b">
+                <Button BorderBrush="#a7a9af" Click="pushComment_OnClick" Margin="592,113,76,5" Background="#7c7e8b">Cancel</Button>
+                <Button BorderBrush="#a7a9af" Click="cancelComment_OnClick" Margin="669,113,10,5" Background="#7c7e8b">Comment</Button>
+                <TextBox Background="Transparent" HorizontalAlignment="Left" Height="98" TextWrapping="Wrap" Text="Enter tip..." VerticalAlignment="Top" Width="720" Margin="10,10,0,0" />
+            </Grid>
+        </Popup>
 
         <Grid Grid.Row="2">
             <Grid.ColumnDefinitions>
@@ -41,7 +58,7 @@
                 x:Name="playPause" HorizontalAlignment="Center" VerticalAlignment="Center" 
                                       PlayShape="{StaticResource PauseShape}" PausedShape="{StaticResource PlayShape}" Margin="5" Click="PlayPause_OnClick"/>
             <Button Grid.Column="1" Content="{StaticResource StopRectangle}" HorizontalAlignment="Center" VerticalAlignment="Center"  Margin="5" Click="Stop_OnClick"/>
-            <controls:PlayTimeline x:Name="playTimeline" Grid.Column="2" VerticalAlignment="Center"
+            <controls:PlayTimeline x:Name="playTimeline" Grid.Column="2" VerticalAlignment="Center" 
                                    local:PlayTimelineEx.MediaElement="{Binding ElementName=mediaElement}"
                                    />
             <Slider x:Name="volumeSlider" Grid.Column="3" Width="50" Value="0.5" Maximum="1" ValueChanged="VolumeSlider_OnValueChanged" VerticalAlignment="Center" IsMoveToPointEnabled="True"/>

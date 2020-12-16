@@ -43,13 +43,56 @@
         private void btnTip_Click(object sender, RoutedEventArgs e)
         {
             mediaElement.Pause();
+            moviePopUp.IsOpen = true;
+            this.ChangeIsPlaying(!this.isPlaying);
+        }
+
+        private void Hide_Click(object sender, RoutedEventArgs e)
+        {
+            moviePopUp.IsOpen = false;
+            this.mediaElement.Play();
+            this.ChangeIsPlaying(!this.isPlaying);
+        }
+
+        private void addComment_OnClick(object sender, RoutedEventArgs e)
+        {
+            if (mediaElement.Source != null)
+            {
+                mediaElement.Pause();
+                addPopUp.IsOpen = true;
+            }
+            else
+            {
+                MessageBox.Show("No movie is running...", "Alert", MessageBoxButton.OK);
+            }
+        }
+
+        private void pushComment_OnClick(object sender, RoutedEventArgs e)
+        {
+            // додати код для пушу комента в бд
+            addPopUp.IsOpen = false;
+            this.mediaElement.Play();
+            this.ChangeIsPlaying(!this.isPlaying);
+        }
+
+        private void cancelComment_OnClick(object sender, RoutedEventArgs e)
+        {
+            addPopUp.IsOpen = false;
+            this.mediaElement.Play();
+            this.ChangeIsPlaying(!this.isPlaying);
         }
 
         private void PlayPause_OnClick(object sender, RoutedEventArgs e)
         {
-            this.ChangeIsPlaying(!this.isPlaying);
+            if (mediaElement.Source != null)
+            {
+                this.ChangeIsPlaying(!this.isPlaying);
+            }
+            else
+            {
+                MessageBox.Show("No movie is running...", "Alert", MessageBoxButton.OK);
+            }
         }
-
         private void SetMediaSource(string file)
         {
             this.mediaElement.Source = new Uri(file);
@@ -121,7 +164,7 @@
 
         private void About_OnClick(object sender, RoutedEventArgs e)
         {
-            MessageBox.Show(this, "Aiman copyright 2016, All rights deserved!");
+            MessageBox.Show(this, "MovieTips inc. copyright 2020, All rights reserved");
         }
     }
 }
