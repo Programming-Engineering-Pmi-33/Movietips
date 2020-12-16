@@ -5,6 +5,7 @@
     using System.Windows.Threading;
     using Microsoft.Win32;
     using System.Windows.Controls.Primitives;
+    using System.Threading;
 
     public partial class MainWindow : Window
     {
