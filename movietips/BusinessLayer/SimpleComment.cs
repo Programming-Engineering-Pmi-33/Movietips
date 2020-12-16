@@ -9,11 +9,11 @@ using System.ComponentModel.DataAnnotations;
 namespace BusinessLayer
 {
 
-    public class Comment
+    public class SimpleComment
     {
         int id;
         TimeSpan moment;
-        public Comment(int _id, TimeSpan _moment)
+        public SimpleComment(int _id, TimeSpan _moment)
         {
             id = _id;
             moment = _moment;
@@ -24,12 +24,4 @@ namespace BusinessLayer
         }
     }
 
-    public class CommentsList
-    {
-        List<Comment> comments;
-        public CommentsList(int movieId)
-        {
-            List<Comment> cms = dbContext.Comment.Where(c => c.MovieId == movieId).Select(c => new Comment(c.Id, new TimeSpan(c.Timestamp.Ticks))).ToList();
-        }
-    }
 }
