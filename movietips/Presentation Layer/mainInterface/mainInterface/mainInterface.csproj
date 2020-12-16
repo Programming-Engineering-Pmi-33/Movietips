@@ -122,9 +122,6 @@
     <None Include="App.config" />
   </ItemGroup>
   <ItemGroup>
-    <Folder Include="Resourses\" />
-  </ItemGroup>
-  <ItemGroup>
     <ProjectReference Include="..\FileStore\FileStore.csproj">
       <Project>{32cc2bc3-3fd4-4df4-bfc1-97335b30a7a9}</Project>
       <Name>FileStore</Name>

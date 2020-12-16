@@ -5,7 +5,7 @@ VisualStudioVersion = 15.0.28010.2026
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "mainInterface", "mainInterface\mainInterface.csproj", "{92CAF705-9E5F-492A-91C3-81B1EC1790A8}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FileStore", "FileStore\FileStore.csproj", "{32CC2BC3-3FD4-4DF4-BFC1-97335B30A7A9}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "FileStore", "FileStore\FileStore.csproj", "{32CC2BC3-3FD4-4DF4-BFC1-97335B30A7A9}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
