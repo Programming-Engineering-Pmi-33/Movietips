@@ -24,7 +24,7 @@ namespace BusinessLayer
                 dbContext.SaveChanges(); 
                 id = max_id+1;
             }
-            comments = dbContext.Comment.Where(c => c.MovieId == id).Select(c => new SimpleMovietip(c.Id, new TimeSpan(c.Timestamp.Ticks))).ToList();
+            comments = dbContext.Comment.Where(c => c.MovieId == id).Select(c => new SimpleMovietip(c.Id, c.Timestamp)).ToList();
 
         }
     }

@@ -7,28 +7,26 @@ using System;
 
 namespace BusinessLayer
 {
-    public class MovieTip
+    public class MovieTip : SimpleMovietip
     {
         string text;
-        TimeSpan timestamp;
         string userLogin;
         int movieId;
 
 
-        public MovieTip(string _text, TimeSpan _timestamp, string _userLogin, int _movieId)
+        public MovieTip(string _text, string _userLogin, int _movieId, int _millisElapsed) : base(_millisElapsed)
         {
             text = _text;
-            timestamp = _timestamp;
             userLogin = _userLogin;
             movieId = _movieId;
         }
-        public void commitTip()
+        public void commitTipToDB()
         {
             var max_id=dbContext.Comment.Max(m => m.Id);
-            Comment comment = new Comment{Id = max_id, UserLogin = userLogin, MovieId = movieId, Text = text, Timestamp = new DateTimeOffset.ToOffset(timestamp))};
-            dbContext.User.Add(new_user); 
+            id = max_id;
+            Comment comment = new Comment{Id = max_id, UserLogin = userLogin, MovieId = movieId, Text = text, Timestamp = millisElapsed};
+            dbContext.Comment.Add(comment);
             dbContext.SaveChanges();
-            return new Login(userlogin_input, encodedpass_input);
         }
         
     }
