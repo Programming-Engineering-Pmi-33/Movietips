@@ -9,17 +9,19 @@ namespace BusinessLayer
 {
     public class Registration
     {
-        public static bool registrate(string userlogin_input, string encodedpass_input, string name_input)
+        public static Login registrate(string userlogin_input, string encodedpass_input, string name_input)
         {
             if(dbContext.User.Any(u => u.UserLogin == userlogin_input))
             {
-                return false;
-            }else{
+                return new Login("User already exists");
+            }
+            else
+            {
                 User new_user = new User{UserLogin = userlogin_input, EncodedPass = encodedpass_input, Name = name_input, Status = "user"};
                 dbContext.User.Add(new_user); 
+                dbContext.SaveChanges();
+                return new Login(userlogin_input, encodedpass_input);
             }
-            dbContext.SaveChanges();
-            return true;
         }
     }
 }
