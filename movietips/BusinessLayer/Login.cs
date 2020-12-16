@@ -11,11 +11,26 @@ namespace BusinessLayer
         string username;
         bool loggedIn;
         string status;
-        Login()
+        public Login()
         {
             username = "";
             loggedIn = false;
             status  = "";
+        }
+
+        public Login(string _status)
+        {
+            status = _status;
+            username = "";
+            loggedIn = false;
+        }
+
+        public Login(string _username, string password)
+        {
+            status = "login failed";
+            username = _username;
+            loggedIn = false;
+            user_check(username, password);
         }
 
         public bool user_check(string userlogin_input, string encodedpass_input)
