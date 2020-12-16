@@ -9,11 +9,11 @@ using System.ComponentModel.DataAnnotations;
 namespace BusinessLayer
 {
 
-    public class SimpleComment
+    public class SimpleMovietip
     {
         int id;
         TimeSpan moment;
-        public SimpleComment(int _id, TimeSpan _moment)
+        public SimpleMovietip(int _id, TimeSpan _moment)
         {
             id = _id;
             moment = _moment;

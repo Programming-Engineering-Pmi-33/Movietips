@@ -7,31 +7,139 @@
         mc:Ignorable="d"
         Background="#b0b6bb"
         Title="MovieTips" Height="450" Width="800">
-    <Grid>
+    <Grid Margin="-1,0,1,0">
         <Grid.RowDefinitions>
             <RowDefinition Height="51*"/>
             <RowDefinition Height="368*"/>
         </Grid.RowDefinitions>
-        
+
         <TextBox Name="txtEditor" />
-        
+
         <Menu HorizontalAlignment="Left" Height="51" VerticalAlignment="Top" Width="790" Background="#bf969a" DockPanel.Dock="Top">
             <MenuItem Name="btnOpenFile" Click="btnOpenFile_Click" Header="Open" Height="51" Width="55"/>
             <MenuItem Header="View" Height="51" Width="55"/>
             <MenuItem Header="Edit" Height="51" Width="55"/>
             <MenuItem Header="Help" Click="help_OnClick" Height="51" Width="55"/>
         </Menu>
-        <Border Height="45" Width="49" BorderThickness="1" BorderBrush="#7c7e8b" Background="Transparent" CornerRadius="10" Margin="0,0,737,0"/>
-        <Border Height="45" Width="49" BorderThickness="1" BorderBrush="#7c7e8b" Background="Transparent" CornerRadius="10" Margin="54,0,683,0"/>
-        <Border Height="45" Width="49" BorderThickness="1" BorderBrush="#7c7e8b" Background="Transparent" CornerRadius="10" Margin="109,0,628,0"/>
-        <Border Height="45" Width="49" BorderThickness="1" BorderBrush="#7c7e8b" Background="Transparent" CornerRadius="10" Margin="164,0,573,0"/>
+        <Border Height="45" Width="49" BorderThickness="1" BorderBrush="#7c7e8b" Background="Transparent" CornerRadius="10" Margin="0,0,737,0">
+            <Border.Style>
+                <Style TargetType="Border">
+                    <Style.Triggers>
+                        <Trigger Property="IsMouseOver" Value="True">
+                            <Trigger.EnterActions>
+                                <BeginStoryboard>
+                                    <Storyboard>
+                                        <ThicknessAnimation Duration="0:0:0.400" To="3" Storyboard.TargetProperty="BorderThickness" />
+                                        <DoubleAnimation Duration="0:0:0.300" To="125" Storyboard.TargetProperty="Height" />
+                                        <DoubleAnimation Duration="0:0:0.300" To="125" Storyboard.TargetProperty="Width" />
+                                    </Storyboard>
+                                </BeginStoryboard>
+                            </Trigger.EnterActions>
+                            <Trigger.ExitActions>
+                                <BeginStoryboard>
+                                    <Storyboard>
+                                        <ThicknessAnimation Duration="0:0:0.250" To="1" Storyboard.TargetProperty="BorderThickness" />
+                                        <DoubleAnimation Duration="0:0:0.150" To="100" Storyboard.TargetProperty="Height" />
+                                        <DoubleAnimation Duration="0:0:0.150" To="100" Storyboard.TargetProperty="Width" />
+                                    </Storyboard>
+                                </BeginStoryboard>
+                            </Trigger.ExitActions>
+                        </Trigger>
+                    </Style.Triggers>
+                </Style>
+            </Border.Style>
+        </Border>
+        <Border Height="45" Width="49" BorderThickness="1" BorderBrush="#7c7e8b" Background="Transparent" CornerRadius="10" Margin="54,0,683,0">
+            <Border.Style>
+                <Style TargetType="Border">
+                    <Style.Triggers>
+                        <Trigger Property="IsMouseOver" Value="True">
+                            <Trigger.EnterActions>
+                                <BeginStoryboard>
+                                    <Storyboard>
+                                        <ThicknessAnimation Duration="0:0:0.400" To="3" Storyboard.TargetProperty="BorderThickness" />
+                                        <DoubleAnimation Duration="0:0:0.300" To="125" Storyboard.TargetProperty="Height" />
+                                        <DoubleAnimation Duration="0:0:0.300" To="125" Storyboard.TargetProperty="Width" />
+                                    </Storyboard>
+                                </BeginStoryboard>
+                            </Trigger.EnterActions>
+                            <Trigger.ExitActions>
+                                <BeginStoryboard>
+                                    <Storyboard>
+                                        <ThicknessAnimation Duration="0:0:0.250" To="1" Storyboard.TargetProperty="BorderThickness" />
+                                        <DoubleAnimation Duration="0:0:0.150" To="100" Storyboard.TargetProperty="Height" />
+                                        <DoubleAnimation Duration="0:0:0.150" To="100" Storyboard.TargetProperty="Width" />
+                                    </Storyboard>
+                                </BeginStoryboard>
+                            </Trigger.ExitActions>
+                        </Trigger>
+                    </Style.Triggers>
+                </Style>
+            </Border.Style>
+        </Border>
+        <Border Height="45" Width="49" BorderThickness="1" BorderBrush="#7c7e8b" Background="Transparent" CornerRadius="10" Margin="109,0,628,0">
+            <Border.Style>
+                <Style TargetType="Border">
+                    <Style.Triggers>
+                        <Trigger Property="IsMouseOver" Value="True">
+                            <Trigger.EnterActions>
+                                <BeginStoryboard>
+                                    <Storyboard>
+                                        <ThicknessAnimation Duration="0:0:0.400" To="3" Storyboard.TargetProperty="BorderThickness" />
+                                        <DoubleAnimation Duration="0:0:0.300" To="125" Storyboard.TargetProperty="Height" />
+                                        <DoubleAnimation Duration="0:0:0.300" To="125" Storyboard.TargetProperty="Width" />
+                                    </Storyboard>
+                                </BeginStoryboard>
+                            </Trigger.EnterActions>
+                            <Trigger.ExitActions>
+                                <BeginStoryboard>
+                                    <Storyboard>
+                                        <ThicknessAnimation Duration="0:0:0.250" To="1" Storyboard.TargetProperty="BorderThickness" />
+                                        <DoubleAnimation Duration="0:0:0.150" To="100" Storyboard.TargetProperty="Height" />
+                                        <DoubleAnimation Duration="0:0:0.150" To="100" Storyboard.TargetProperty="Width" />
+                                    </Storyboard>
+                                </BeginStoryboard>
+                            </Trigger.ExitActions>
+                        </Trigger>
+                    </Style.Triggers>
+                </Style>
+            </Border.Style>
+        </Border>
+        <Border Height="45" Width="49" BorderThickness="1" BorderBrush="#7c7e8b" Background="Transparent" CornerRadius="10" Margin="164,0,573,0">
+            <Border.Style>
+                <Style TargetType="Border">
+                    <Style.Triggers>
+                        <Trigger Property="IsMouseOver" Value="True">
+                            <Trigger.EnterActions>
+                                <BeginStoryboard>
+                                    <Storyboard>
+                                        <ThicknessAnimation Duration="0:0:0.400" To="3" Storyboard.TargetProperty="BorderThickness" />
+                                        <DoubleAnimation Duration="0:0:0.300" To="125" Storyboard.TargetProperty="Height" />
+                                        <DoubleAnimation Duration="0:0:0.300" To="125" Storyboard.TargetProperty="Width" />
+                                    </Storyboard>
+                                </BeginStoryboard>
+                            </Trigger.EnterActions>
+                            <Trigger.ExitActions>
+                                <BeginStoryboard>
+                                    <Storyboard>
+                                        <ThicknessAnimation Duration="0:0:0.250" To="1" Storyboard.TargetProperty="BorderThickness" />
+                                        <DoubleAnimation Duration="0:0:0.150" To="100" Storyboard.TargetProperty="Height" />
+                                        <DoubleAnimation Duration="0:0:0.150" To="100" Storyboard.TargetProperty="Width" />
+                                    </Storyboard>
+                                </BeginStoryboard>
+                            </Trigger.ExitActions>
+                        </Trigger>
+                    </Style.Triggers>
+                </Style>
+            </Border.Style>
+        </Border>
 
         <Border Margin="492,10,115,2" Padding="5" BorderThickness="1" BorderBrush="#bf969a" Background="White" CornerRadius="10">
             <TextBox BorderBrush="White" TextWrapping="Wrap" Text="Enter film..." Background="White" Margin="18,4,19,4"/>
         </Border>
 
         <Border BorderThickness="1" BorderBrush="#7c7e8b" Background="#bf969a" CornerRadius="10" Margin="682,10,48,2">
-            <Button Content="Search" Background="#bf969a" BorderBrush="#bf969a" Margin="682,10,55,0"/>
+            <Button Background="#bf969a" BorderBrush="#bf969a" Margin="9,9,9,-1"/>
         </Border>
         <Label Content="Search" HorizontalAlignment="Center" Margin="690,15,48,0" VerticalAlignment="Top" Width="54"/>
 
