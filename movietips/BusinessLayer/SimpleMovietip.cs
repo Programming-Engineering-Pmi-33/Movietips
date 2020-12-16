@@ -8,17 +8,17 @@ using System.ComponentModel.DataAnnotations;
 
 namespace BusinessLayer
 {
-    public class SimpleMovietip
+    public class SimpleMovieTip
     {
         protected int id;
         protected int millisElapsed;
-        public SimpleMovietip(int _id, int _moment)
+        public SimpleMovieTip(int _id, int _moment)
         {
             id = _id;
             millisElapsed = _moment;
         }
 
-        public SimpleMovietip(int _moment)
+        public SimpleMovieTip(int _moment)
         {
             millisElapsed = _moment;
         }

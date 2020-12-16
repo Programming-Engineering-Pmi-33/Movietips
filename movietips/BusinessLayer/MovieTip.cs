@@ -7,12 +7,11 @@ using System;
 
 namespace BusinessLayer
 {
-    public class MovieTip : SimpleMovietip
+    public class MovieTip : SimpleMovieTip
     {
         string text;
         string userLogin;
         int movieId;
-
 
         public MovieTip(string _text, string _userLogin, int _movieId, int _millisElapsed) : base(_millisElapsed)
         {

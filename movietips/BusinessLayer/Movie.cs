@@ -10,7 +10,7 @@ namespace BusinessLayer
     public class Movie
     {
         int id;
-        public List<SimpleMovietip> comments;    
+        public List<SimpleMovieTip> comments;    
         public Movie(string moviename_input, int leninsec = 0)
         {
             if(dbContext.Movie.Any(m => m.Name == moviename_input))
@@ -24,7 +24,7 @@ namespace BusinessLayer
                 dbContext.SaveChanges(); 
                 id = max_id+1;
             }
-            comments = dbContext.Comment.Where(c => c.MovieId == id).Select(c => new SimpleMovietip(c.Id, c.Timestamp)).ToList();
+            comments = dbContext.Comment.Where(c => c.MovieId == id).Select(c => new SimpleMovieTip(c.Id, c.Timestamp)).ToList();
 
         }
     }
