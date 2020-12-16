@@ -15,7 +15,7 @@ namespace DataLayer.GenerateDBData
                 Comment c = new Comment();
                 c.Id = i;
                 c.UserLogin = "user47";
-                c.Timestamp = DateTimeOffset.Now;
+                c.Timestamp = 0;
                 c.Text = "some interesting ref";
                 c.MovieId = i;
                 dbContext.Comment.Add(c);
