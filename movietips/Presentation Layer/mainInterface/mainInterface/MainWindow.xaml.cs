@@ -26,6 +26,11 @@ namespace mainInterface
             InitializeComponent();
         }
 
+        private void help_OnClick(object sender, RoutedEventArgs e)
+        {
+            MessageBox.Show("To start watching a movie — press Open, then select a film to watch. Or select a movie from MovieTips movie base.", "Help", MessageBoxButton.OK);
+        }
+
         private void btnOpenFile_Click(object sender, RoutedEventArgs e)
         {
             OpenFileDialog openFileDialog = new OpenFileDialog();

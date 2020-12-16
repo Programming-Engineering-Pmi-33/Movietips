@@ -19,7 +19,7 @@
             <MenuItem Name="btnOpenFile" Click="btnOpenFile_Click" Header="Open" Height="51" Width="55"/>
             <MenuItem Header="View" Height="51" Width="55"/>
             <MenuItem Header="Edit" Height="51" Width="55"/>
-            <MenuItem Header="Help" Height="51" Width="55"/>
+            <MenuItem Header="Help" Click="help_OnClick" Height="51" Width="55"/>
         </Menu>
         <Border Height="45" Width="49" BorderThickness="1" BorderBrush="#7c7e8b" Background="Transparent" CornerRadius="10" Margin="0,0,737,0"/>
         <Border Height="45" Width="49" BorderThickness="1" BorderBrush="#7c7e8b" Background="Transparent" CornerRadius="10" Margin="54,0,683,0"/>
