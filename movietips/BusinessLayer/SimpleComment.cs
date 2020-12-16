@@ -23,5 +23,4 @@ namespace BusinessLayer
             return dbContext.Comment.FirstOrDefault( c => c.Id == id).Text;
         }
     }
-
 }
