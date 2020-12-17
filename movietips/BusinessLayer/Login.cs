@@ -12,6 +12,10 @@ namespace BusinessLayer
         bool loggedIn;
         string loginStatus;
         
+        public string getStatus()
+        {
+            return loginStatus;
+        }
         public Login()
         {
             username = "";
