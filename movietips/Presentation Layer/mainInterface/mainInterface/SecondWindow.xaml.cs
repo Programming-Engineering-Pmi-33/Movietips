@@ -10,36 +10,23 @@ using System.Windows.Documents;
 using System.Windows.Input;
 using System.Windows.Media;
 using System.Windows.Media.Imaging;
-using System.Windows.Navigation;
 using System.Windows.Shapes;
 
 namespace registrationInterface
 {
     /// <summary>
-    /// Interaction logic for MainWindow.xaml
+    /// Interaction logic for SecondWindow.xaml
     /// </summary>
-    public partial class MainWindow : Window
+    public partial class SecondWindow : Window
     {
-        public MainWindow()
+        public SecondWindow()
         {
             InitializeComponent();
         }
-
         private void MainWindow_OnMouseDown(object sender, MouseButtonEventArgs e)
         {
-            if(e.LeftButton == MouseButtonState.Pressed)
+            if (e.LeftButton == MouseButtonState.Pressed)
                 DragMove();
-        }
-
-        private void OpenWindow(object sender, RoutedEventArgs e)
-        {
-            }
-
-        private void Button_Click(object sender, RoutedEventArgs e)
-        {
-            SecondWindow objSecondWindow = new SecondWindow();
-            this.Visibility = Visibility.Hidden;
-            objSecondWindow.Show();
         }
     }
 }
