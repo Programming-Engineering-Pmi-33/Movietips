@@ -6,15 +6,22 @@
     using Microsoft.Win32;
     using System.Windows.Controls.Primitives;
     using System.Threading;
+    using System.ComponentModel;
 
     public partial class PlayerWindow : Window
     {
         private bool isPlaying = false;
+        private bool mediaRunning;
 
         public PlayerWindow(string filename="")
         {
             this.InitializeComponent();
             this.ChangeIsPlaying(false);
+
+            if (filename != "")
+            {
+                mediaRunning = true;
+            }
 
             DispatcherTimer timer = new DispatcherTimer();
             timer.Interval = TimeSpan.FromSeconds(1);
@@ -39,6 +46,29 @@
                 if (mediaElement.Position > mom2)
                 {
                     btnTip.Visibility = Visibility.Hidden;
+                }
+            }
+        }
+
+        void Window_Closing(object sender, CancelEventArgs e)
+        {
+            if (this.mediaRunning)
+            {
+                string msg = "Movie is running, close window?";
+                MessageBoxResult result =
+                  MessageBox.Show(
+                    msg,
+                    "MovieTips",
+                    MessageBoxButton.YesNo,
+                    MessageBoxImage.Warning);
+                if (result == MessageBoxResult.No)
+                {
+                    e.Cancel = true;
+                }
+                else
+                {
+                    mediaElement.Pause();
+                    mediaElement.Close();
                 }
             }
         }
