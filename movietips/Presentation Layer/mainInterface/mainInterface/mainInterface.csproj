@@ -37,6 +37,9 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="BusinessLayer">
+      <HintPath>..\..\..\BusinessLayer\bin\Debug\netcoreapp3.1\BusinessLayer.dll</HintPath>
+    </Reference>
     <Reference Include="ControlzEx, Version=4.0.0.0, Culture=neutral, PublicKeyToken=69f1c32f803d307e, processorArchitecture=MSIL">
       <HintPath>..\packages\ControlzEx.4.3.0\lib\net45\ControlzEx.dll</HintPath>
     </Reference>
@@ -167,12 +170,6 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
-  </ItemGroup>
-  <ItemGroup>
-    <ProjectReference Include="..\FileStore\FileStore.csproj">
-      <Project>{32cc2bc3-3fd4-4df4-bfc1-97335b30a7a9}</Project>
-      <Name>FileStore</Name>
-    </ProjectReference>
   </ItemGroup>
   <ItemGroup>
     <Resource Include="logo.png" />
