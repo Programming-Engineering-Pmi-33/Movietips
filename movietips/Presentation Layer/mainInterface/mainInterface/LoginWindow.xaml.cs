@@ -1,4 +1,5 @@
-﻿using System;
+﻿using mainInterface;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -18,14 +19,14 @@ namespace registrationInterface
     /// <summary>
     /// Interaction logic for MainWindow.xaml
     /// </summary>
-    public partial class MainWindow : Window
+    public partial class LoginWindow : Window
     {
-        public MainWindow()
+        public LoginWindow()
         {
             InitializeComponent();
         }
 
-        private void MainWindow_OnMouseDown(object sender, MouseButtonEventArgs e)
+        private void LoginWindow_OnMouseDown(object sender, MouseButtonEventArgs e)
         {
             if(e.LeftButton == MouseButtonState.Pressed)
                 DragMove();
@@ -40,6 +41,14 @@ namespace registrationInterface
             SecondWindow objSecondWindow = new SecondWindow();
             this.Visibility = Visibility.Hidden;
             objSecondWindow.Show();
+        }
+
+        private void Button_Click_1(object sender, RoutedEventArgs e)
+        {
+            // add validation
+            MainWindow objMainWindow = new MainWindow();
+            this.Visibility = Visibility.Hidden;
+            objMainWindow.Show();
         }
     }
 }
