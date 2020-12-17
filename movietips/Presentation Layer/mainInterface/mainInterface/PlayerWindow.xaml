@@ -7,8 +7,12 @@
         xmlns:controls="clr-namespace:WpfMediaPlayer.Controls"
         mc:Ignorable="d"
         WindowStartupLocation="CenterScreen" WindowState="Maximized"
-        Title="MovieTips" Background="Black" d:DesignWidth="1003.378">
+        Title="MovieTips" Background="Black" d:DesignWidth="1003.378"
+        Closing="Window_Closing">
     <Grid>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition/>
+        </Grid.ColumnDefinitions>
         <Grid.RowDefinitions>
             <RowDefinition Height="Auto"/>
             <RowDefinition/>
@@ -23,14 +27,14 @@
             <MenuItem Header="Add comment" Click="addComment_OnClick"/>
         </Menu>
 
-        <MediaElement x:Name="mediaElement" Grid.Row="1" DockPanel.Dock="Top" LoadedBehavior="Manual" UnloadedBehavior="Manual"
+        <MediaElement x:Name="mediaElement" Grid.Row="1" LoadedBehavior="Manual" UnloadedBehavior="Manual"
                       MediaEnded="MediaElement_OnMediaEnded" MediaFailed="MediaElement_OnMediaFailed"/>
 
-        
-        <WrapPanel Grid.Row="1" HorizontalAlignment="Right" VerticalAlignment="Center">
+
+        <WrapPanel Grid.Row="1" HorizontalAlignment="Right" VerticalAlignment="Center" Margin="0,203">
             <Button Name="btnTip" Margin="5,0" Click="btnTip_Click" Visibility="Hidden" BorderBrush="#a7a9af" Background="#7c7e8b" Height="30" Width="55">Movietip</Button>
         </WrapPanel>
-    
+
         <Popup Name="moviePopUp" Placement="Mouse" HorizontalOffset="-100" VerticalOffset="-100" AllowsTransparency="True">
             <Grid>
                 <Rectangle Width="200" Height="200" Fill="#7c7e8b"/>
@@ -47,7 +51,7 @@
             </Grid>
         </Popup>
 
-        <Grid Grid.Row="2">
+        <Grid Grid.Row="2" Grid.ColumnSpan="1">
             <Grid.ColumnDefinitions>
                 <ColumnDefinition Width="Auto"/>
                 <ColumnDefinition Width="Auto"/>
