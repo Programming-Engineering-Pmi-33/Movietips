@@ -10,7 +10,7 @@ namespace DataLayer.GenerateDBData
         {
             var dbContext = new WebContext();
 
-            for(int i=4;i<52;i++)
+            for(int i = 4; i < 52; i++)
             {
                 Comment c = new Comment();
                 c.Id = i;
