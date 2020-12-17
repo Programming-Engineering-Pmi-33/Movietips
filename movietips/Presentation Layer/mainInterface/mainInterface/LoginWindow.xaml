@@ -43,6 +43,7 @@
             <StackPanel Grid.Row="1" >
                 <StackPanel Orientation="Horizontal">
                     <TextBox FontFamily="Helvetica"
+                             Name ="LoginTextBox"
                              TextWrapping="Wrap"
                              FontWeight="Light"
                              Text=""
@@ -71,6 +72,7 @@
                 <StackPanel Orientation="Horizontal" Margin="0,20,0,0">
                     <PasswordBox FontFamily="Helvetica"
                              FontWeight="Light"
+                             Name ="PasswordTextBox"
                              Password=""
                              FontSize="20"
                              HorizontalAlignment="Center"

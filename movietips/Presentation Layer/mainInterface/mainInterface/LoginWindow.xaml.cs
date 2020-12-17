@@ -13,7 +13,7 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
-
+using BusinessLayer;
 namespace registrationInterface
 {
     /// <summary>
@@ -46,9 +46,19 @@ namespace registrationInterface
         private void Button_Click_1(object sender, RoutedEventArgs e)
         {
             // add validation
-            MainWindow objMainWindow = new MainWindow();
-            this.Visibility = Visibility.Hidden;
-            objMainWindow.Show();
+            string login = LoginTextBox.Text;
+            string pass = PasswordTextBox.Password;
+            LoginVar.login = new Login(login, pass);
+            if (LoginVar.login.getStatus() == "ok")
+			{
+                MainWindow objMainWindow = new MainWindow();
+                this.Visibility = Visibility.Hidden;
+                objMainWindow.Show();
+            }
+            else
+			{
+                MessageBox.Show(LoginVar.login.getStatus());
+			}
         }
     }
 }
