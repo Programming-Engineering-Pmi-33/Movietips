@@ -6,7 +6,8 @@ namespace BusinessLayer
     {
         public static void Main(string[] args)
         {
-            
+            MovieTip mt = new MovieTip("haha nice joke", "yura", 7, 47);
+            mt.commitTipToDB();
         }
     }
 }

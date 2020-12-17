@@ -10,25 +10,25 @@ namespace BusinessLayer
     {
         string username;
         bool loggedIn;
-        string status;
+        string loginStatus;
         
         public Login()
         {
             username = "";
             loggedIn = false;
-            status  = "";
+            loginStatus  = "";
         }
 
         public Login(string _status)
         {
-            status = _status;
+            loginStatus = _status;
             username = "";
             loggedIn = false;
         }
 
         public Login(string _username, string password)
         {
-            status = "login failed";
+            loginStatus = "login failed";
             username = _username;
             loggedIn = false;
             user_check(username, password);
@@ -43,7 +43,7 @@ namespace BusinessLayer
                {
                    username = userlogin_input;
                    loggedIn = true;
-                   status = "ok";
+                   loginStatus = "ok";
                    return true;
                }
            }
