@@ -7,8 +7,9 @@
     using System.Windows.Controls.Primitives;
     using System.Threading;
     using System.ComponentModel;
+	using Notifications.Wpf;
 
-    public partial class PlayerWindow : Window
+	public partial class PlayerWindow : Window
     {
         private bool isPlaying = false;
         private bool mediaRunning;
@@ -31,22 +32,26 @@
             this.mediaElement.Source = new Uri(filename);
 
         }
+        NotificationManager notificationManager = new NotificationManager();
 
+        
         void timer_Tick(object sender, EventArgs e)
         {
             TimeSpan mom = new TimeSpan(0, 0, 5);
-            TimeSpan mom2 = new TimeSpan(0, 0, 9);
+            TimeSpan mom2 = new TimeSpan(0, 0, 6);
 
             if (mediaElement.Source != null)
             {
                 if (mediaElement.Position >= mom && mediaElement.Position <= mom2)
                 {
-                    btnTip.Visibility = Visibility.Visible;
+                    notificationManager.Show(new NotificationContent
+                    {
+                        Title = "Sample notification",
+                        Message = "Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
+                        Type = NotificationType.Information
+                    });
                 }
-                if (mediaElement.Position > mom2)
-                {
-                    btnTip.Visibility = Visibility.Hidden;
-                }
+                
             }
         }
 
