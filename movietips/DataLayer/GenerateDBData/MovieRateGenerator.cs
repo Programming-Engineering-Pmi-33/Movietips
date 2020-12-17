@@ -10,10 +10,10 @@ namespace DataLayer.GenerateDBData
         {
             var dbContext = new WebContext();
 
-            for(int i=4;i<52;i++)
+            for(int i = 4; i < 52; i++)
             {
                 MovieRate mr = new MovieRate();
-                mr.Rate = i%5 + 1;
+                mr.Rate = i % 5 + 1;
                 mr.MovieId = 47;
                 mr.Id = i;
                 mr.Comment = "my rate is the only true rate";
