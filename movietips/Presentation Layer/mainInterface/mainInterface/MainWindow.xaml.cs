@@ -31,11 +31,32 @@ namespace mainInterface
             MessageBox.Show("To start watching a movie — press Open, then select a film to watch. Or select a movie from MovieTips movie base.", "Help", MessageBoxButton.OK);
         }
 
+        private void SetMediaSource(string file)
+        {
+            //this.mediaElement.Source = new Uri(file);
+        }
+
+        private string OpenFile()
+        {
+            string filter = "Video (*.avi, *.mkv, *.mp4, *.flv)|*.avi;*.mkv;*.mp4;*.flv|Audio(*.ogg, *.mp3, *.wav)|*.ogg;*.mp3;*.wav;|All Files(*.*)|*.*";
+            var openDialog = new OpenFileDialog { Multiselect = false, CheckFileExists = true, CheckPathExists = true, Title = "Select video file", AddExtension = true, Filter = filter };
+            if (openDialog.ShowDialog(this) == true)
+            {
+                return openDialog.FileName;
+            }
+            return null;
+        }
+
         private void btnOpenFile_Click(object sender, RoutedEventArgs e)
         {
-            OpenFileDialog openFileDialog = new OpenFileDialog();
-            if (openFileDialog.ShowDialog() == true)
-                txtEditor.Text = File.ReadAllText(openFileDialog.FileName);
+            string file = this.OpenFile();
+            if (file == null)
+            {
+                return;
+            }
+            WpfMediaPlayer.PlayerWindow player = new WpfMediaPlayer.PlayerWindow(file);
+            player.Show();
+            
         }
     }
 }
