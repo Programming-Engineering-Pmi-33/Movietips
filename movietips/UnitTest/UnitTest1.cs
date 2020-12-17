@@ -31,7 +31,7 @@ namespace UnitTest
         }
 
         [TestMethod]
-        public void TestMovie2()
+        public void TestMovie1()
         {
             BusinessLayer.Movie m = new BusinessLayer.Movie("ForestGump");
             var mov = dbContext.Movie.First(m=> m.Name == "ForestGump");
@@ -49,14 +49,14 @@ namespace UnitTest
         [TestMethod]
         public void TestRegistration()
         {
-            Login t = Registration.registrate("User_arsen7","pass","Arsen");
+            Login t = Registration.registrate("User_arsen8","pass","Arsen");
             Assert.IsTrue(t.getStatus() == "ok");
         }
 
         [TestMethod]
         public void TestRegistration1()
         {
-            Login t = Registration.registrate("User_arsen7","pass","Arsen");
+            Login t = Registration.registrate("User_arsen8","pass","Arsen");
             Assert.IsTrue(t.getStatus() == "User already exists");
         }
     }
