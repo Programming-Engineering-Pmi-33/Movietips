@@ -11,6 +11,7 @@ using System.Windows.Input;
 using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Shapes;
+using mainInterface;
 
 namespace registrationInterface
 {
@@ -27,6 +28,14 @@ namespace registrationInterface
         {
             if (e.LeftButton == MouseButtonState.Pressed)
                 DragMove();
+        }
+
+        private void Button_Click(object sender, RoutedEventArgs e)
+        {
+            // add validation
+            MainWindow objMainWindow = new MainWindow();
+            this.Visibility = Visibility.Hidden;
+            objMainWindow.Show();
         }
     }
 }

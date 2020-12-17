@@ -93,7 +93,7 @@
                         Opacity="0.5"/>
 
                 <StackPanel HorizontalAlignment="Center" Orientation="Horizontal" Margin="0,50,0,0">
-                    <Button Width="100" Height="40" Content="REGISTER"/>
+                    <Button Width="100" Height="40" Content="REGISTER" Click="Button_Click"/>
                 </StackPanel>
 
             </StackPanel>
